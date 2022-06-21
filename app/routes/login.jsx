@@ -24,7 +24,7 @@ export async function action({ request }) {
 
   if (user && isCorrectPassword) {
     session.set("userId", user._id);
-    return redirect("/", {
+    return redirect("/profiles/new", {
       headers: {
         "Set-Cookie": await commitSession(session),
       },

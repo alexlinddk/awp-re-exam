@@ -9,7 +9,7 @@ export async function loader({ request }) {
     throw redirect("/login");
   }
   const db = await connectDb();
-  const profile = await db.models.Profile.findById(userId);
+  const profile = await db.models.Profile.findById(session.userId);
   return profile;
 }
 
@@ -18,7 +18,7 @@ export default function Index() {
 
   return (
     <div>
-      <ul className="ml-5 list-disc">
+      {/* <ul className="ml-5 list-disc">
         {profiles.map((profile) => {
           return (
             <li key={profile._id}>
@@ -29,7 +29,7 @@ export default function Index() {
             </li>
           );
         })}
-      </ul>
+      </ul> */}
     </div>
   );
 }
